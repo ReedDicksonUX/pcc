@@ -1,9 +1,52 @@
-<div style="font-family: Arial, sans-serif; border: 1px solid #ddd; padding: 25px; border-radius: 8px; background-color: #fcfcfc; max-width: 800px; margin: 20px auto; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-    <h3 style="margin-top: 0; color: #202124;">Need to Find a Policy?</h3>
-    <p style="color: #5f6368; font-size: 16px; line-height: 1.5; margin-bottom: 20px;">
-        Check out the new <strong>Pima Policy Search Tool</strong> created by Makyla Hays, which works for employee handbooks, administrative procedures, and board policies.
-    </p>
-    
-    <script async src="https://cse.google.com/cse.js?cx=f7847ec8f4c0b4841"></script>
-    <div class="gcse-search"></div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* This ensures the page itself can scroll if the results get long */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow-y: auto; /* Force vertical scrollbar if needed */
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 95%;
+            margin: 0 auto;
+        }
+
+        /* Styling the search box area */
+        .search-wrapper {
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #fcfcfc;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        /* Making sure Google Results don't get squished */
+        .gcse-search {
+            min-height: 400px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="search-wrapper">
+        <h3 style="margin-top: 0; color: #202124;">Need to Find a Policy?</h3>
+        <p style="color: #5f6368; font-size: 16px; line-height: 1.5; margin-bottom: 20px;">
+            Check out the new <strong>Pima Policy Search Tool</strong> created by Makyla Hays, which works for employee handbooks, administrative procedures, and board policies.
+        </p>
+        
+        <script async src="https://cse.google.com/cse.js?cx=f7847ec8f4c0b4841"></script>
+        <div class="gcse-search" data-enableHistory="true"></div>
+    </div>
 </div>
+
+</body>
+</html>
