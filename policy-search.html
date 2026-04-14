@@ -5,59 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pima Policy Search Tool</title>
     <style>
-        body, html {
+        /* Force the body to take up the full display height and width */
+        html, body {
             margin: 0;
             padding: 0;
             height: 100%;
-            overflow-y: auto;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
             background-color: #ffffff;
         }
 
-        .container {
+        /* Flex-wrapper ensures the container expands to the edges of the iframe or screen */
+        .flex-wrapper {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
             padding: 20px;
-            max-width: 900px;
-            margin: 0 auto;
+            box-sizing: border-box;
+            width: 100%;
         }
 
-        .search-wrapper {
+        .search-container {
             border: 1px solid #e0e0e0;
             padding: 25px;
             border-radius: 12px;
             background-color: #fafafa;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            margin-bottom: 30px;
+            flex: 1; 
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto; 
         }
 
-        /* Process Note Styling */
         .process-note {
-            margin-top: 40px;
-            padding-top: 20px;
+            margin-top: 25px;
+            padding-top: 15px;
             border-top: 1px solid #eee;
             font-size: 13px;
             color: #666;
             line-height: 1.6;
+            text-align: left;
         }
 
-        .process-note a {
-            color: #1a73e8;
-            text-decoration: none;
-        }
+        .process-note a { color: #1a73e8; text-decoration: none; }
+        .process-note a:hover { text-decoration: underline; }
 
-        .process-note a:hover {
-            text-decoration: underline;
-        }
-
-        /* Ensure search results have a minimum area */
-        .gcse-search {
-            min-height: 450px;
-        }
+        .gcse-search { width: 100%; }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <div class="search-wrapper">
+<div class="flex-wrapper">
+    <div class="search-container">
         <h2 style="margin-top: 0; color: #202124;">Need to Find a Policy?</h2>
         <p style="color: #3c4043; font-size: 16px; line-height: 1.5; margin-bottom: 20px;">
             Check out the new <strong>Pima Policy Search Tool</strong> created by Makyla Hays, which works for employee handbooks, administrative procedures, and board policies.
@@ -67,15 +68,7 @@
         <div class="gcse-search" data-enableHistory="true"></div>
 
         <footer class="process-note">
-            <strong>Transparent AI Practice Note:</strong> The 
-            <a href="https://cse.google.com/cse?cx=f7847ec8f4c0b4841" target="_blank">original search bar</a> 
-            was created by Makyla Hays using 
-            <a href="https://programmablesearchengine.google.com/about/" target="_blank">Google's programmable search engine</a>. 
-            As Google's original URL was not embeddable in WordPress, Reed used Gemini "Thinking" mode to vibe-code a solution involving: 
-            1) Gemini creating new HTML code; 
-            2) Gemini guided Reed to embed that code within a GitHub public repository so that a URL could be created that would work with H5P embeds that work within Pressbooks; 
-            3) upon testing the output for computers and hand-held devices, Gemini "Fast" was used to revise the code to include scrollbars and this process note. 
-            This process took 25 minutes overall on April 14, 2026.
+            <strong>Transparent AI Practice Note:</strong> The <a href="https://cse.google.com/cse?cx=f7847ec8f4c0b4841" target="_blank">original search bar</a> was created by Makyla Hays using <a href="https://programmablesearchengine.google.com/about/" target="_blank">Google's programmable search engine</a>. As Google's original URL was not embeddable in WordPress, Reed used Gemini "Thinking" mode to vibe-code a solution involving: 1) Gemini creating new HTML code; 2) Gemini guided Reed to embed that code within a GitHub public repository so that a URL could be created that would work with H5P embeds that work within Pressbooks; 3) upon testing the output for computers and hand-held devices, Gemini "Fast" was used to revise the code to include scrollbars and this process note. This process took 25 minutes overall on April 14, 2026.
         </footer>
     </div>
 </div>
