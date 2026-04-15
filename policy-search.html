@@ -8,16 +8,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
 
     <style>
-        /* Force container to fill the screen and prevent double outer scrollbars */
+        /* Lock body strictly to the iframe window to prevent scrollbars from hiding below the fold */
         html, body {
             margin: 0;
             padding: 0;
             width: 100%;
-            height: 100%; /* Default to 100% */
-            min-height: calc(100vh + 1.5in); /* Ensure it fits entirely */
+            height: 100vh;
             display: flex;
             flex-direction: column;
-            font-family: Arial, sans-serif; /* Default to Arial */
+            font-family: Arial, sans-serif;
             background-color: #fcfcfc;
             overflow: hidden; 
         }
@@ -33,20 +32,20 @@
 
         /* Main Container styling with refined branding */
         .search-container {
-            border: 1px solid #145169; /* Thinner Pressbooks border */
+            border: 1px solid #145169;
             padding: 25px;
             border-radius: 8px;
-            background-color: #C6DAFC; /* Google background color */
+            background-color: #C6DAFC; 
             flex: 1;
             display: flex;
             flex-direction: column;
             
-            /* Scrollbar Enforcement */
+            /* Enforce internal scrolling so custom scrollbars stay visible */
             overflow-y: scroll !important; 
             -webkit-overflow-scrolling: touch; 
         }
 
-        /* Persistent Custom Scrollbar aligned to #C91F26 */
+        /* Highly Visible Custom Scrollbar */
         .search-container::-webkit-scrollbar {
             width: 18px; 
             background-color: #f1f1f1;
@@ -56,12 +55,12 @@
             border-left: 1px solid #ccc;
         }
         .search-container::-webkit-scrollbar-thumb {
-            background-color: #C91F26; /* Matched to Apple Red */
+            background-color: #C91F26; /* Apple Red */
             border: 3px solid #e4e4e4; 
             border-radius: 10px;
         }
         .search-container::-webkit-scrollbar-thumb:hover {
-            background-color: #a8191f; /* Slightly darker red on hover */
+            background-color: #a8191f; 
         }
 
         /* Mobile adjustment */
@@ -82,7 +81,7 @@
         p.intro-text {
             font-family: Arial, sans-serif;
             color: #444444; 
-            font-size: 14px; /* Reduced by 5 points for better fit */
+            font-size: 14px; 
             line-height: 1.5;
             margin-bottom: 25px;
             margin-top: 0;
@@ -92,7 +91,7 @@
         .process-footer {
             margin-top: 40px;
             padding: 20px;
-            background-color: #f0f0f0; /* Soft grey background */
+            background-color: #f0f0f0; 
             border-top: 1px solid #145169;
             border-radius: 6px;
         }
@@ -106,13 +105,12 @@
 
         p.process-note {
             font-family: Arial, sans-serif;
-            font-size: 15px; /* Reduced by 2 points for better fit */
+            font-size: 15px; 
             color: #444444;
             line-height: 1.6;
             margin: 0;
         }
 
-        /* High contrast accessible links */
         p.process-note a { 
             color: #145169; 
             text-decoration: underline; 
@@ -144,7 +142,7 @@
                 <span role="img" aria-label="Red Apple Emoji">🍎</span> Transparent AI Practice Note
             </h3>
             <p class="process-note">
-                The <a href="https://cse.google.com/cse?cx=f7847ec8f4c0b4841" target="_blank" aria-label="Original Google search bar link, opens in a new tab">original search bar</a> was created by Makyla Hays using <a href="https://programmablesearchengine.google.com/about/" target="_blank" aria-label="Google's programmable search engine about page, opens in a new tab">Google's programmable search engine</a>. Because Google's original URL was not embeddable in WordPress, Reed used Gemini "Thinking" mode to vibe-code a solution involving: 1) generating new HTML code; 2) embedding that code within a public GitHub repository to create a URL compatible with H5P embeds in Pressbooks; and 3) testing the output on both computers and handheld devices. Afterward, Gemini "Pro" was used to revise the code to match Pima branding, enforce screen-reader accessibility, ensure 100% full-screen expansion, scale typography, and implement persistent scrollbars. The ColorZilla Chrome extension was used to accurately identify brand hex colors. This entire process took 1 hour on April 14, 2026.
+                The <a href="https://cse.google.com/cse?cx=f7847ec8f4c0b4841" target="_blank" aria-label="Original Google search bar link, opens in a new tab">original search bar</a> was created by Makyla Hays using <a href="https://programmablesearchengine.google.com/about/" target="_blank" aria-label="Google's programmable search engine about page, opens in a new tab">Google's programmable search engine</a>. Because it was not natively embeddable in WordPress, Reed Dickson collaborated with Gemini AI to "vibe-code" a custom HTML wrapper. Hosted via GitHub Pages, this solution ensures compatibility with Pressbooks H5P embeds. The iterative process optimized Pima branding, screen-reader accessibility, responsive typography, and full-screen scaling. This workflow (including ColorZilla for hex color mapping) took 1 hour overall on April 14, 2026.
             </p>
         </footer>
     </main>
