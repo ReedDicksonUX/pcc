@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pima Policy Search Tool</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+
     <style>
         /* Force container to fill the screen and prevent double outer scrollbars */
         html, body {
@@ -13,8 +16,8 @@
             height: 100vh;
             display: flex;
             flex-direction: column;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-            background-color: #fcfcfc; /* Pale white background */
+            font-family: Arial, sans-serif; /* Default to Arial */
+            background-color: #fcfcfc;
             overflow: hidden; 
         }
 
@@ -27,12 +30,12 @@
             box-sizing: border-box;
         }
 
-        /* Main Container styling with Pressbooks Branding */
+        /* Main Container styling with refined branding */
         .search-container {
-            border: 4px solid #03406F; /* Pressbooks Blue */
+            border: 1px solid #145169; /* Thinner Pressbooks border */
             padding: 25px;
             border-radius: 8px;
-            background-color: #ffffff;
+            background-color: #C6DAFC; /* Google background color */
             flex: 1;
             display: flex;
             flex-direction: column;
@@ -42,9 +45,9 @@
             -webkit-overflow-scrolling: touch; 
         }
 
-        /* Persistent Custom Scrollbar (Prevents Auto-hide) */
+        /* Persistent Custom Scrollbar */
         .search-container::-webkit-scrollbar {
-            width: 18px; /* Thick and highly visible */
+            width: 18px; 
             background-color: #f1f1f1;
         }
         .search-container::-webkit-scrollbar-track {
@@ -52,50 +55,57 @@
             border-left: 1px solid #ccc;
         }
         .search-container::-webkit-scrollbar-thumb {
-            background-color: #03406F; /* Blue thumb for high contrast */
-            border: 3px solid #e4e4e4; /* Padding effect */
+            background-color: #145169; /* Matched to border */
+            border: 3px solid #e4e4e4; 
             border-radius: 10px;
         }
         .search-container::-webkit-scrollbar-thumb:hover {
-            background-color: #022a4a;
+            background-color: #0c3647;
         }
 
         /* Mobile adjustment */
         @media (max-width: 600px) {
             .flex-wrapper { padding: 5px; }
-            .search-container { padding: 15px; border-width: 2px; }
+            .search-container { padding: 15px; }
         }
 
-        /* Typography - Increased by 5 points/pixels */
+        /* Typography */
         h2.main-title {
-            color: #222222; /* Dark grey header */
-            font-size: 29px; /* Standard 24px + 5px */
+            font-family: 'Merriweather', serif;
+            color: #222222; 
+            font-size: 29px; 
             margin-top: 0;
             margin-bottom: 15px;
         }
 
         p.intro-text {
-            color: #444444; /* Light grey text */
-            font-size: 21px; /* Standard 16px + 5px */
+            font-family: Arial, sans-serif;
+            color: #444444; 
+            font-size: 21px; 
             line-height: 1.5;
             margin-bottom: 25px;
+            margin-top: 0;
         }
 
         /* Footer Section */
         .process-footer {
             margin-top: 40px;
-            padding-top: 20px;
-            border-top: 2px solid #03406F;
+            padding: 20px;
+            background-color: #f0f0f0; /* Soft grey background */
+            border-top: 1px solid #145169;
+            border-radius: 6px;
         }
 
         h3.practice-header {
+            font-family: 'Merriweather', serif;
             color: #222222;
-            font-size: 24px; /* Standard 19px + 5px */
+            font-size: 24px; 
             margin: 0 0 10px 0;
         }
 
         p.process-note {
-            font-size: 19px; /* Standard 14px + 5px */
+            font-family: Arial, sans-serif;
+            font-size: 17px; /* 4 points smaller than body text */
             color: #444444;
             line-height: 1.6;
             margin: 0;
@@ -103,12 +113,12 @@
 
         /* High contrast accessible links */
         p.process-note a { 
-            color: #03406F; 
+            color: #145169; 
             text-decoration: underline; 
-            font-weight: 600;
+            font-weight: bold;
         }
         p.process-note a:hover { 
-            color: #022a4a; 
+            color: #0c3647; 
         }
         
         .gcse-search { width: 100%; }
@@ -133,7 +143,7 @@
                 <span role="img" aria-label="Red Apple Emoji">🍎</span> Transparent AI Practice Note
             </h3>
             <p class="process-note">
-                The <a href="https://cse.google.com/cse?cx=f7847ec8f4c0b4841" target="_blank" aria-label="Original Google search bar link, opens in a new tab">original search bar</a> was created by Makyla Hays using <a href="https://programmablesearchengine.google.com/about/" target="_blank" aria-label="Google's programmable search engine about page, opens in a new tab">Google's programmable search engine</a>. As Google's original URL was not embeddable in WordPress, Reed used Gemini "Thinking" mode to vibe-code a solution involving: 1) Gemini creating new HTML code; 2) Gemini guided Reed to embed that code within a GitHub public repository so that a URL could be created that would work with H5P embeds that work within Pressbooks; 3) upon testing the output for computers and hand-held devices, Gemini "Pro" was used to revise the code to match Pima branding, enforce screen-reader accessibility, ensure 100% full-screen expansion, scale typography, and include persistent scrollbars and this process note. This process took 1 hour overall on April 14, 2026.
+                The <a href="https://cse.google.com/cse?cx=f7847ec8f4c0b4841" target="_blank" aria-label="Original Google search bar link, opens in a new tab">original search bar</a> was created by Makyla Hays using <a href="https://programmablesearchengine.google.com/about/" target="_blank" aria-label="Google's programmable search engine about page, opens in a new tab">Google's programmable search engine</a>. Because Google's original URL was not embeddable in WordPress, Reed used Gemini "Thinking" mode to vibe-code a solution involving: 1) generating new HTML code; 2) embedding that code within a public GitHub repository to create a URL compatible with H5P embeds in Pressbooks; and 3) testing the output on both computers and handheld devices. Afterward, Gemini "Pro" was used to revise the code to match Pima branding, enforce screen-reader accessibility, ensure 100% full-screen expansion, scale typography, and implement persistent scrollbars. The ColorZilla Chrome extension was used to accurately identify brand hex colors. This entire process took 1 hour on April 14, 2026.
             </p>
         </footer>
     </main>
