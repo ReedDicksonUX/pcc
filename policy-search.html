@@ -5,26 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pima Policy Search Tool</title>
     <style>
-        /* Force the body to take up the full display height and width */
+        /* Force the container to fill the viewport regardless of H5P constraints */
         html, body {
             margin: 0;
             padding: 0;
-            height: 100%;
-            width: 100%;
+            width: 100vw;
+            height: 100vh;
             display: flex;
             flex-direction: column;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
             background-color: #ffffff;
+            overflow: hidden; /* Prevent double scrollbars on the outer edges */
         }
 
-        /* Flex-wrapper ensures the container expands to the edges of the iframe or screen */
         .flex-wrapper {
             display: flex;
             flex-direction: column;
-            flex: 1;
-            padding: 20px;
-            box-sizing: border-box;
             width: 100%;
+            height: 100%;
+            padding: 15px;
+            box-sizing: border-box;
         }
 
         .search-container {
@@ -33,26 +33,44 @@
             border-radius: 12px;
             background-color: #fafafa;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            flex: 1; 
+            flex: 1;
             display: flex;
             flex-direction: column;
-            overflow-y: auto; 
+            overflow-y: auto; /* Internal scrolling for long results */
+        }
+
+        /* Responsive adjustments for handheld devices */
+        @media (max-width: 600px) {
+            .flex-wrapper { padding: 5px; }
+            .search-container { padding: 15px; border-radius: 0; }
+        }
+
+        /* Footer & Icon Styling */
+        .process-footer {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
         }
 
         .process-note {
-            margin-top: 25px;
-            padding-top: 15px;
-            border-top: 1px solid #eee;
             font-size: 13px;
             color: #666;
-            line-height: 1.6;
-            text-align: left;
+            line-height: 1.5;
+            margin: 0;
         }
 
         .process-note a { color: #1a73e8; text-decoration: none; }
         .process-note a:hover { text-decoration: underline; }
 
-        .gcse-search { width: 100%; }
+        .ai-icon {
+            flex-shrink: 0;
+            width: 32px;
+            height: 32px;
+            opacity: 0.8;
+        }
     </style>
 </head>
 <body>
@@ -60,15 +78,21 @@
 <div class="flex-wrapper">
     <div class="search-container">
         <h2 style="margin-top: 0; color: #202124;">Need to Find a Policy?</h2>
-        <p style="color: #3c4043; font-size: 16px; line-height: 1.5; margin-bottom: 20px;">
-            Check out the new <strong>Pima Policy Search Tool</strong> created by Makyla Hays, which works for employee handbooks, administrative procedures, and board policies.
+        <p style="color: #3c4043; font-size: 16px; margin-bottom: 20px;">
+            Check out the <strong>Pima Policy Search Tool</strong> created by Makyla Hays, for handbooks, administrative procedures, and board policies.
         </p>
         
         <script async src="https://cse.google.com/cse.js?cx=f7847ec8f4c0b4841"></script>
         <div class="gcse-search" data-enableHistory="true"></div>
 
-        <footer class="process-note">
-            <strong>Transparent AI Practice Note:</strong> The <a href="https://cse.google.com/cse?cx=f7847ec8f4c0b4841" target="_blank">original search bar</a> was created by Makyla Hays using <a href="https://programmablesearchengine.google.com/about/" target="_blank">Google's programmable search engine</a>. As Google's original URL was not embeddable in WordPress, Reed used Gemini "Thinking" mode to vibe-code a solution involving: 1) Gemini creating new HTML code; 2) Gemini guided Reed to embed that code within a GitHub public repository so that a URL could be created that would work with H5P embeds that work within Pressbooks; 3) upon testing the output for computers and hand-held devices, Gemini "Fast" was used to revise the code to include scrollbars and this process note. This process took 25 minutes overall on April 14, 2026.
+        <footer class="process-footer">
+            <p class="process-note">
+                <strong>Transparent AI Practice Note:</strong> The <a href="https://cse.google.com/cse?cx=f7847ec8f4c0b4841" target="_blank">original search bar</a> was created by Makyla Hays using <a href="https://programmablesearchengine.google.com/about/" target="_blank">Google's programmable search engine</a>. As Google's original URL was not embeddable in WordPress, Reed used Gemini "Thinking" mode to vibe-code a solution involving: 1) Gemini creating new HTML code; 2) Gemini guided Reed to embed that code within a GitHub public repository so that a URL could be created that would work with H5P embeds that work within Pressbooks; 3) upon testing the output for computers and hand-held devices, Gemini "Fast" was used to revise the code to include scrollbars and this process note. This process took 25 minutes overall on April 14, 2026.
+            </p>
+            <svg class="ai-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-label="Apple-style AI Intelligence Icon showing an apple with a digital brain circuit">
+                <path fill="#555" d="M17.05,20.28c-0.66,0.95-1.22,1.44-1.76,1.44c-0.53,0-1.04-0.45-1.92-0.45c-0.89,0-1.42,0.44-1.92,0.44 c-0.53,0-1.1-0.51-1.78-1.48C8.25,18.04,7,14.39,7,11.38c0-3.11,2.02-4.75,3.97-4.75c1.02,0,1.87,0.39,2.54,0.39 c0.64,0,1.38-0.37,2.5-0.37c1.78,0,3.34,1.15,4.01,2.69c-3.15,1.51-2.64,5.43,0.34,6.67C19.74,17.65,18.57,19.12,17.05,20.28z M12,6.5c0.07-1.89,1.57-3.41,3.38-3.39c0.11,1.96-1.57,3.58-3.38,3.58C12,6.69,12,6.59,12,6.5z M11,11h2v2h-2V11z M14,11h2v2h-2V11z M8,11h2v2H8V11z"/>
+                <circle cx="12" cy="12" r="1" fill="#fff" />
+            </svg>
         </footer>
     </div>
 </div>
